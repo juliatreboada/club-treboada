@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Calendario - Club Treboada</title>
+  <meta content="Calendario de eventos del Club Treboada" name="description">
+  <meta content="gimnasia, treboada, calendario, eventos" name="keywords">
+
+  <!-- Favicons -->
+  <link href="images/icon/treboada.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- FullCalendar CSS (versión global) -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header-inner-pages">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
+          <h1 class="logo me-auto me-lg-0"><a href="index.html">Club Treboada</a></h1>
+
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+              <li><a class="nav-link scrollto" href="index.html#hero">Inicio</a></li>
+              <li><a class="nav-link scrollto" href="index.html#services">Escolas Deportivas</a></li>
+              <li class="dropdown"><a href="#"><span>Especialidades</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="ritmica.html">Ximnasia Rítmica</a></li>
+                  <li><a href="acrobatica.html">Ximnasia Acrobática</a></li>
+                  <li><a href="trampolin.html">Ximnasia Trampolín</a></li>
+                </ul>
+              </li>
+              <li><a class="nav-link scrollto" href="index.html#contact">Contacto</a></li>
+              <li><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+              <li><a href="calendario.html" class="active">Calendario</a></li>
+              <li><a href="torneo-treboada.html">IV Torneo Treboada</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+    <section id="calendar-section" class="calendar">
+      <div class="container">
+        <div class="section-title">
+          <h2>Calendario de Eventos</h2>
+          <p>Aquí encontrarás las fechas importantes del Club Treboada</p>
+        </div>
+
+        <div class="leyenda">
+            <div class="item">
+              <span class="color-box" style="background-color: #E06600;"></span>
+              <span>EDM Pontevedra</span>
+            </div>
+            <div class="item">
+              <span class="color-box" style="background-color: #4DA6FF;"></span>
+              <span>ED Caldas de Reis</span>
+            </div>
+            <div class="item">
+              <span class="color-box" style="background-color: #FFC845;"></span>
+              <span>EDM Soutomaior</span>
+            </div>
+        </div>
+
+        <div class="leyenda">
+        <div class="item">
+            <span class="color-box" style="background-color: #FF6F61;"></span>
+            <span>Ximnasia Rítmica</span>
+          </div>
+          <div class="item">
+            <span class="color-box" style="background-color: #007A4D;"></span>
+            <span>Ximnasia Acrobática</span>
+          </div>
+          <div class="item">
+            <span class="color-box" style="background-color: #005B8F;"></span>
+            <span>Ximnasia Trampolín</span>
+          </div>
+</div>
+        <div id="calendar"></div>
+      </div>
+    </section>
+  </main>
+
+ <!-- Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <!-- Columna de imagen -->
+            <div id="imageCol" class="col-md-6 d-flex justify-content-center align-items-center" style="display: none;">
+             <!-- Imagen -->
+                <!-- <a id="eventImageLink" href="" class="glightbox" style="display: block;"> -->
+                    <img id="eventImage" src="" alt="" class="img-fluid" style="object-fit: contain;">
+                 <!-- </a> -->
+            </div>
+
+            <!-- Columna de descripción y enlaces -->
+            <div id="contentCol" class="col-md-12">
+                <p id="eventSubtitle" style="font-weight: 1000;"></p>
+              <p id="eventDescription"></p>
+              <p>
+                <a id="eventUrl" href="#" target="_blank" style="display:none;" class="btn btn-saber-mais">Saber máis</a>
+                <a id="eventStreaming" href="#" target="_blank" style="display:none;" class="btn btn-streaming">Streaming</a>
+              </p>
+              <div id="participantsBlock" style="display:none;">
+                <br>
+                <p><strong>Participan do Club Treboada:</strong></p>
+                <p id="participants"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+  
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Club Treboada</h3>
+      <p>Gimnasia Rítmica, Acrobática y Trampolín</p>
+      <div class="social-links">
+        <a href="https://es-la.facebook.com/ClubTreboada/photos_albums" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/clubtreboada_ritmica/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.instagram.com/clubtreboada_acrobatica/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.instagram.com/clubtreboada_trampolin/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>KnightOne</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- FullCalendar JS (versión global) -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+  <!-- JS del calendario -->
+    <script src="assets/js/calendario.js"></script>
+
+</body>
+</html>
