@@ -67,11 +67,16 @@
               <li><a class="nav-link scrollto" href="catalogo.html">Catálogo</a></li>
               <li><a href="calendario.html" >Calendario</a></li>
               <li><a href="torneo-treboada.html">IV Torneo Treboada</a></li>
-            </ul>
+              <li><!-- Botón para abrir modal -->
+                <button class="btn get-started-btn " data-bs-toggle="modal" data-bs-target="#loginModal">
+                  Iniciar sesión
+                </button>
+              </li>
+            </ul>  
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
+
           
-          <!-- <a href="opentreboada.html" class="get-started-btn scrollto">Open Treboada</a> -->
         </div>
       </div>
       
@@ -80,7 +85,35 @@
   <!-- End Header -->
   <body>
     
-    
+
+
+<!-- Modal de Login -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Acceso restringido</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="login-email" class="form-label">Correo electrónico</label>
+          <input type="email" id="login-email" class="form-control" placeholder="tu@correo.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="login-password" class="form-label">Contraseña</label>
+          <input type="password" id="login-password" class="form-control" placeholder="********" required>
+        </div>
+        <div class="alert alert-danger d-none" id="login-error"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-primary" id="btn-login">Entrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
    <!-- ======= Hero Section ======= -->
 <div id="hero" class="d-flex flex-column justify-content-center">
   <div class="container">
@@ -124,22 +157,6 @@
               <div class="slide-inner">
                 <a href="https://www.escolasdeportivastreboada.com">
                   <img src="images/eventos/abrimos-inscricios.jpeg" alt="Cartel inicio escolas 25-26">
-                </a>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="slide-inner">
-                <a href="torneo-treboada.html">
-                  <img src="images/eventos/iV-torneo-img.jpg" alt="Cartel torneo">
-                </a>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="slide-inner">
-                <a href="torneo-treboada.html" >
-                  <img src="images/eventos/IV-torneo-ritmica.jpg" alt="Cartel torneo">
                 </a>
               </div>
             </div>
@@ -277,63 +294,7 @@
             
             
           </section><!-- End Services Section -->
-          <!-- ======= About Us Section ======= -->
-          <!-- <section class="about">
-            <div class="container">
-              
-              <div class="section-title">
-                <h2 id="about">Calendarios</h2>
-              </div>
-              
-              <div class="row content">
-                <div class="col-lg-4">
-                  <h3 class="eventos">
-                    Próximos Eventos Galegos
-                  </h3>
-                  <ul>
-                    <li><h5><i class="ri-check-double-line"></i> 3 Decembro 2023 - Vigo</h5></li>
-                    <li>Campionato Galego de Conxuntos Ximnasia Rítmica</li>
-                    <li><h5><i class="ri-check-double-line"></i> 16 Decembro 2023 - Pontevedra</h5></li>
-                    <li>Campionato Galego Escolar Trampolín</li>
-                    <li><h5><i class="ri-check-double-line"></i> 1-3 Marzo 2024 - Vigo</h5></li>
-                    <li>III Trofeo Cidade de Vigo - XVI Copa Galicia Internacional Ximnasia Acrobática</li>
-                  </ul>
-                  <a href="https://www.ximnasia.com/campionatos.htm" class="btn-learn-more" target="_blank" rel="noreferrer noopener">Calendario Galego</a>
-                </div>
-                
-                <div class="col-lg-4 pt-4 pt-lg-0">
-                  <h3 class="eventos">
-                    Próximos Eventos Nacionais
-                  </h3>
-                  <ul>
-                    <li><h5><i class="ri-check-double-line"></i>23-24 Marzo 2024 - Madrid</h5></li>
-                    <li>Open Madrid Gimnasia Acrobática</li>
-                    <li><h5><i class="ri-check-double-line"></i> Próximamente...</h5></li>
-                    <li>Campeonato de España de Trampolín</li>
-                    <li><h5><i class="ri-check-double-line"></i> Próximamente...</h5></li>
-                    <li>Campeonato de España de Gimnasia Rítmica</li>
-                    <li><h5><i class="ri-check-double-line"></i> Próximamente...</h5></li>
-                    <li>Campeonato de España de Gimnasia Acrobática</li>
-                  </ul>
-                  <a href="https://rfegimnasia.es/calendarionacional" class="btn-learn-more" target="_blank" rel="noreferrer noopener">Calendario Nacional</a>
-                </div>
-                
-                <div class="col-lg-4 pt-4 pt-lg-0">
-                  <h3 class="eventos">
-                    Próximos Eventos Internacionais
-                  </h3>
-                  <ul>
-                    <li><h5><i class="ri-check-double-line"></i> 15-19 May 2024 - Maia 🇵🇹</h5></li>
-                    <li>MIAC Maia International Acrobatic Championship</li>
-                    <a href="https://www.maiaacrocup.com/" class="btn-learn-more" target="_blank" rel="noreferrer noopener">Learn more</a>  
-                  </ul>
-                  <a href="#" class="btn-learn-more">Learn More</a> 
-                </div>
-              </div>
-              
-            </div>
-          </section>End About Us Section -->
-          
+
           <!-- ======= Contact Section ======= -->
           <section  class="contact">
             <div class="container">
@@ -466,20 +427,17 @@
       <div id="preloader"></div>
       <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
       
-      <!-- Vendor JS Files -->
+     <!-- Vendor JS Files -->
       <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
       <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
       <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
       <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
       <script src="assets/vendor/php-email-form/validate.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-      
-      <!-- Template Main JS File -->
-      <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script> 
+      <!-- Tu JS principal -->
       <script src="assets/js/main.js"></script>
-      
+
     </body>
     
     </html>
