@@ -68,9 +68,9 @@
               <li><a href="calendario.html" >Calendario</a></li>
               <li><a href="torneo-treboada.html">IV Torneo Treboada</a></li>
               <li><!-- Botón para abrir modal -->
-                <button class="btn get-started-btn " data-bs-toggle="modal" data-bs-target="#loginModal">
+                <!-- <button class="btn get-started-btn " data-bs-toggle="modal" data-bs-target="#loginModal">
                   Iniciar sesión
-                </button>
+                </button> -->
               </li>
             </ul>  
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -83,12 +83,12 @@
     </div>
   </header>
   <!-- End Header -->
-  <body>
+  <main>
     
 
 
 <!-- Modal de Login -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<form class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -112,7 +112,7 @@
       </div>
     </div>
   </div>
-</div>
+</form>
 
    <!-- ======= Hero Section ======= -->
 <div id="hero" class="d-flex flex-column justify-content-center">
@@ -437,6 +437,11 @@
 
       <!-- Tu JS principal -->
       <script src="assets/js/main.js"></script>
+      <!-- AWS Amplify Core -->
+      <script src="https://cdn.jsdelivr.net/npm/aws-amplify@7.6.5/dist/aws-amplify.min.js" defer></script>
+      <script src="assets/js/amplify-config.js" defer></script>
+      <script src="assets/js/login.js" defer></script>
+
 
     </body>
     
